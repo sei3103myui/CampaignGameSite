@@ -1,0 +1,419 @@
+@charset "utf-8";
+body{
+    margin: 0;
+    background: none;
+}
+body::before{
+    margin: 0;
+    display: block;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: -1;
+    width:100%;
+    height: 100vh;
+    background: url("../img/backImage.jpg") no-repeat;
+    background-size: cover;
+    content:"";
+    
+}
+
+header {
+    margin: 0px;
+    background-color: rgba(47,79,79,0.4);
+    width: 100%;
+    height: 60px;
+    border: solid 3px rgba(34,57,85,0.4);
+    box-sizing: border-box;
+}
+header h1{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#menu{
+    
+    position:absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+#menu div{
+    width: 20%;
+    height: 40px;
+    
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+}
+#menu .menuopen{
+    color: white;
+    font-size: 18px;
+    display: block;
+    width:100%;
+    height: 100%;
+    position:  absolute;
+    top: 0;
+    left: 0;
+    pointer-events: auto;
+}
+#menu .menuclose{
+    color: white;
+    font-size: 18px;
+    display: none;
+    width:100%;
+    height: 100%;
+    position:  absolute;
+    top: 0;
+    left: 0;
+    pointer-events: auto;
+}
+#menu ul{
+    background:rgba(47,79,79,0.9);
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    display: none;
+}
+
+#menu li{
+    color:rgba(0,0,0,1);
+    border-bottom: 1px
+    rgba(255,255,255,1)solid;
+    pointer-events: auto;
+}
+#menu li a{
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+#menu:target .menuopen{
+    display: none;
+}
+#menu:target .menuclose{
+    display: block;
+}
+#menu:target ul{
+    display: block;
+}
+
+
+#header_hr hr{
+    margin-top: 3px;
+    margin-bottom: 2px;
+}
+/*PC用画面設定*/
+@media print,
+screen and (min-width: 640px){
+
+    #newMenberEntry{
+        margin:0;
+        background-image: url("../img/backImage.jpg");
+
+    }
+    #popup{
+        display: none;
+        width: 70%;
+        padding: 10px;
+        border: 2px solid #000;
+        margin-top: 20px;
+    }
+
+    #ad video{
+        
+        width: 100%;
+        height: auto;
+    }
+}
+/*スマホ用画面設定*/
+@media screen and (max-width: 640px){
+   
+    /*  index*/
+    #title{
+        background-image: url("../img/titleBackImage.jpg");
+        background-size: 100%;
+        margin: 10px 0 0 0;
+    }
+    #in{
+        margin: 20px 15px 5px 15px;
+        font-size: 18px;  
+    }
+
+    #in h2{
+        height: 40px;
+        text-align: center;
+        position: relative;
+        background-image: url("../img/Image_h2.png");
+        background-size: 80%;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-sizing: border-box;
+    }
+    
+    .image_d {
+        width: 50%;
+        height: auto;
+        transform: translate(50%,0%);
+    }
+    
+    .entrybutton{       
+        position: relative;
+        height: 70px;
+        text-align: center;    
+        background-image: url("../img/button_green.png");
+        background-size: 80%;   
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    .entrybutton a{    
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        width: 90%;
+        height: 90%; 
+        text-align: center;  
+        color: white;
+        text-decoration: none;
+        font-size: 30px;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all  0.3s ease;
+    }
+    
+    .entrybutton a:hover{
+        color: black;
+        
+    }
+    
+    .loginbutton{
+        position: relative;
+        height: 70px;
+        text-align: center;    
+        background-image: url("../img/button_green.png");
+        background-size: 80%;   
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .loginbutton a{
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        width: 90%;
+        height: 90%; 
+        text-align: center;  
+        color: white;
+        text-decoration: none;
+        font-size: 30px;
+    }
+    /*登録画面ここから*/
+    #newMenberEntry{
+        /*上、右、下、左*/
+        margin: 20px 15px 5px 15px;
+        font-size: 18px; 
+    }
+
+    #newMenberEntry h2{
+        height: 40px;
+        text-align: center;
+        position: relative;
+        background-image: url("../img/Image_h2_pink.png");
+        background-size: 80%;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-sizing: border-box;
+    }
+
+    #newMenberEntry #inputform{
+        background-color: rgba(255,255,255,0.5);
+        border: solid 1px rgba(34,57,85,0.4);
+        box-sizing: border-box;
+        margin-bottom: 3px;
+        padding-left: 10px;
+    }
+    #popup{
+        display: none;
+        width: 70%;
+        padding: 10px;
+        border: 2px solid #000;
+        margin-top: 20px;
+    }
+    /*ログイン画面ここから*/
+    #login{
+        margin: 5px 10px 5px 10px;
+       font-size: 18px; 
+    }
+
+    #login h2{
+        height: 40px;
+        text-align: center;
+        position: relative;
+        background-image: url("../img/Image_h2_pink.png");
+        background-size: 80%;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-sizing: border-box;
+    }
+
+    #login #inputform{
+        background-color: rgba(255,255,255,0.5);
+        border: solid 1px rgba(34,57,85,0.4);
+        box-sizing: border-box;
+        margin-bottom: 3px;
+        padding-left: 10px;
+    }
+    /*パスワード変更画面ここから*/
+    #pschange{
+        margin: 5px 10px 5px 10px;
+        
+    }
+
+    #pschange h1{
+        text-align: center;
+    }
+
+    /*説明画面ここから*/
+    #manual{
+        margin: 0;
+    }   
+    #manual h1{
+        text-align: center;
+        background-image: url("../img/Image_h2.png");
+        background-size: 75%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .carousel-wrapper{
+        position: relative;
+        /*height:55%;
+        width:80%;*/
+        margin-top: 10;
+    }
+      .carousel-item{
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        padding:0px 50px;
+        opacity:0;
+        transition: all 0.5s ease-in-out;
+    }
+    
+    .arrow{
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 12px;
+    }
+      
+    .arrow-prev{
+        left:15px;
+        position:absolute;
+        top:200px;
+        transform:translateY(-50%) rotate(135deg);
+    }
+       
+    .arrow-next{
+        right:15px;
+        position:absolute;
+        top:200px;
+        transform:translateY(-50%) rotate(-45deg);
+    }
+    
+    .item-1{
+        
+        z-index: 2;
+        opacity: 1;
+        /*background-repeat: no-repeat;
+        background-size:contain;*/
+    }
+    .item-2 {
+        /*background-repeat: no-repeat;
+        background-size:contain;*/
+    }
+    .item-3 {
+        /*background-repeat: no-repeat;
+        background-size:contain;*/
+    }
+
+    *:target ~ .item-1 {
+        opacity: 0;
+    }
+    
+    #item-1:target ~ .item-1 {
+        opacity: 1;
+    }
+    
+    #item-2:target ~ .item-2, #item-3:target ~ .item-3 {
+        z-index: 3;
+        opacity: 1;
+    }
+
+    #PlayB {
+        position: absolute;
+        bottom:-80px;
+    }
+
+    /*広告画面ここから*/
+    #ad{
+        margin: 5px 10px 5px 10px;
+        
+    }
+
+    #ad h1{
+        text-align: center;
+    }
+
+    #movie{
+        text-align: center;
+    }
+    #movie video{
+        
+        width: 90%;
+        height: auto;
+    }
+
+    /*リザルト画面*/
+    #result{
+        margin: 5px 10px 5px 10px;
+        
+    }
+
+    .scoretext{
+        margin-bottom: 0%;
+        font-size: 5vw;
+        
+    }
+    .score{
+        margin: 0;
+        font-size: 10vw;
+        text-align: center;
+    }
+    
+    .highscore{
+        margin: 0;
+        text-align: center;
+        font-size: 8vw;
+    }
+
+    /*ログアウト画面*/
+    #logout{
+        margin: 5px 10px 5px 10px; 
+        
+        text-align: center;
+    }
+
+    /*QRコード画面*/
+    #qr{
+        text-align: center;
+    }
+}
